@@ -119,11 +119,14 @@ useEffect(() => {
           <Confirmation />
         </Route>
       </Switch>
-      {
-        orders.map(order => {
-          return <Order key={order.id} details={order} />
-        })
-      }
+      <div className='orders-section'>
+        <h2>ORDERS</h2>
+        {
+          orders.map(order => {
+            return <Order key={order.id} details={order} />
+          })
+        }
+      </div>
     </div>
   );
 };
