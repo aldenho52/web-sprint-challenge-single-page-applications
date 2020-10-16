@@ -115,13 +115,15 @@ useEffect(() => {
             errors={formErrors}
           />
         </Route>
+        <Route path='/confirmation' >
+          <Confirmation />
+        </Route>
       </Switch>
       {
         orders.map(order => {
           return <Order key={order.id} details={order} />
         })
       }
-      <Confirmation />
     </div>
   );
 };
