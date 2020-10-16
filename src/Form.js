@@ -40,6 +40,16 @@ export default function Form (props) {
                         <option value='large'>Large</option>
                     </select>
                 </label>
+                <div>
+                <label>Gluten Free Crust
+                    <input 
+                        type='checkbox'
+                        name="gluten"
+                        checked={values.gluten}
+                        onChange={onChange}
+                    />
+                </label>
+                </div>
                 <div className='checkboxes'>
                     <h2>Toppings</h2>
                     <label>Pepperoni

@@ -9,6 +9,7 @@ export default yup.object().shape({
   size: yup
     .string()
     .oneOf(["small", "medium", "large"], "pizza size is required"),
+  gluten: yup.boolean(),
   steak: yup.boolean(),
   pepperoni: yup.boolean(),
   chicken: yup.boolean(),

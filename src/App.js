@@ -12,6 +12,7 @@ import Confirmation from './Confirmation'
 const initialFormValues = {
     name: '',
     size: '',
+    gluten: false,
     pepperoni: false,
     steak: false,
     chicken: false,
@@ -76,6 +77,7 @@ const formSubmit = () => {
   const newOrder = {
     name: formValues.name.trim(),
     size: formValues.size,
+    gluten: formValues.gluten,
     toppings: ['pepperoni', 'steak', 'chicken', 'olives'].filter(
       (hobby) => formValues[hobby]
     ),

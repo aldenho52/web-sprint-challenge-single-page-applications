@@ -9,6 +9,7 @@ function Order({ details }) {
     <div className='order-container'>
       <h3>{details.name}</h3>
       <p>Size: {details.size}</p>
+      <p>Gluten Free Crust: {details.gluten ? 'Yes' : 'No'}</p>
       {
         !!details.toppings && !!details.toppings.length &&
         <div>
