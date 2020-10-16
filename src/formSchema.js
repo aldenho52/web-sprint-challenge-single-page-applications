@@ -8,7 +8,8 @@ export default yup.object().shape({
     .min(2, "username must be at least 2 characters"),
   size: yup
     .string()
-    .oneOf(["small", "medium", "large"], "pizza size is required"),
+    .required('pizza size is required')
+    .oneOf(["small", "medium", "large"], "please select a size"),
   gluten: yup.boolean(),
   steak: yup.boolean(),
   pepperoni: yup.boolean(),

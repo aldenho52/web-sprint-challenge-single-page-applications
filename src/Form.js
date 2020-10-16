@@ -14,7 +14,7 @@ export default function Form (props) {
             values={values}
             change={change}
             submit={submit}
-            disable={disabled}
+            disabled={disabled}
             errors={errors}
             />
             <div className='orders-section'>

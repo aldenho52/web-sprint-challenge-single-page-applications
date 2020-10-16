@@ -50,7 +50,6 @@ const App = () => {
 
 const change = (name, value) => {
   //enter yup schema here
-
   yup
   .reach(schema, name)
   .validate(value)
@@ -99,7 +98,7 @@ useEffect(() => {
       <nav>
         <h1>Lambda Eats</h1>
         <div className='nav-links'>
-          <Link to='/'>Home</Link>
+          <Link className='home-link' to='/'>Home</Link>
           <Link to='/pizza'>Form</Link>
         </div>
       </nav>
@@ -112,7 +111,7 @@ useEffect(() => {
             values={formValues}
             change={change}
             submit={formSubmit}
-            disable={disabled}
+            disabled={disabled}
             errors={formErrors}
             orders={orders}
           />

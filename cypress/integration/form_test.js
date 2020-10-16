@@ -12,6 +12,8 @@ describe('pizz form App', () => {
     const form = () => cy.get('.pizza-form')
     const orders = () => cy.get('.orders-section')
     const instructions = () => cy.get('input[name="instructions"]')
+    const submitBtn = () => cy.get('button')
+    const homeLink = () => cy.get('.home-link')
 
     it('name input text can be added', () => {
         nameInput()
@@ -45,5 +47,19 @@ describe('pizz form App', () => {
             .should('contain', 'olives')
             .should('contain', 'chicken')
             .should('contain', 'extra cheese')
+    })
+
+    it('Home link works', () => {
+        homeLink()
+            .should('exist')
+            .click()
+            .url().should('contain', 'http://localhost:3000/')
+    })
+    it('Button is disabled and enabled correctly', () => {
+        submitBtn().should('exist')
+        submitBtn().should('be.disabled')
+        nameInput().type('Alden Ho')
+        sizeInput().select('large')
+        submitBtn().should('not.be.disabled')
     })
 })
