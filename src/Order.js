@@ -8,19 +8,17 @@ function Order({ details }) {
   return (
     <div className='order-container'>
       <h2>{details.name}</h2>
-      <p>Email: {details.email}</p>
-      <p>Role: {details.role}</p>
-      <p>Civil: {details.civil}</p>
-
+      <p>Size: {details.size}</p>
       {
-        !!details.hobbies && !!details.hobbies.length &&
+        !!details.toppings && !!details.toppings.length &&
         <div>
-          Hobbies:
+          Toppings:
           <ul>
-            {details.hobbies.map((like, idx) => <li key={idx}>{like}</li>)}
+            {details.toppings.map((like, idx) => <li key={idx}>{like}</li>)}
           </ul>
         </div>
       }
+      <p>Special Instructions: {details.instructions}</p>
     </div>
   )
 }

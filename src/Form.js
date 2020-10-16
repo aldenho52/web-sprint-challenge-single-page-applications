@@ -79,8 +79,9 @@ export default function Form (props) {
                     <input type='text' value={values.instructions} name='instructions' onChange={onChange} placeholder="Enter any additional instructions or comments here" />
                 </label>
                 <Link to='/confirmation'>
-                <button disabled={disabled}>Submit</button>
+
                 </Link>
+                <button disabled={disabled}>Submit</button>
                 <div className="errors">
                     <div>{errors.name}</div>
                     <div>{errors.size}</div>
