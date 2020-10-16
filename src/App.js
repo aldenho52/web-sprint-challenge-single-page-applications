@@ -35,7 +35,7 @@ const App = () => {
 
   const postNewOrder = (newOrder) => {
     axios
-      .post('http://localhost:3000/pizza', newOrder)
+      .post('https://reqres.in/api/users', newOrder)
       .then(res => {
         console.log(res)
         console.log('Order submitted!')
@@ -121,6 +121,7 @@ useEffect(() => {
           return <Order key={order.id} details={order} />
         })
       }
+      <Confirmation />
     </div>
   );
 };
