@@ -7,7 +7,7 @@ function Order({ details }) {
 
   return (
     <div className='order-container'>
-      <h2>{details.name}</h2>
+      <h3>{details.name}</h3>
       <p>Size: {details.size}</p>
       {
         !!details.toppings && !!details.toppings.length &&

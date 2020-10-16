@@ -1,8 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Order from './Order'
 
 export default function Form (props) {
-    const {values, change, submit, disabled, errors} = props
+    const {values, change, submit, disabled, errors, orders} = props
     
     const onChange = (evt) => {
         /* 🔥 FIX THIS SO IT ALSO WORKS WITH CHECKBOXES */
@@ -87,6 +88,14 @@ export default function Form (props) {
                     <div>{errors.size}</div>
                 </div>
             </form>
+            <div className='orders-section'>
+        <h2>ORDERS</h2>
+        {
+          orders.map(order => {
+            return <Order key={order.id} details={order} />
+          })
+        }
+      </div>
         </div>
     )
 }

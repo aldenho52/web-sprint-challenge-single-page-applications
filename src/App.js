@@ -8,7 +8,6 @@ import schema from './formSchema'
 import Home from './Home'
 import Form from './Form'
 import Confirmation from './Confirmation'
-import Order from './Order'
 
 const initialFormValues = {
     name: '',
@@ -113,20 +112,14 @@ useEffect(() => {
             submit={formSubmit}
             disable={disabled}
             errors={formErrors}
+            orders={orders}
           />
         </Route>
         <Route path='/confirmation' >
           <Confirmation />
         </Route>
       </Switch>
-      <div className='orders-section'>
-        <h2>ORDERS</h2>
-        {
-          orders.map(order => {
-            return <Order key={order.id} details={order} />
-          })
-        }
-      </div>
+  
     </div>
   );
 };
