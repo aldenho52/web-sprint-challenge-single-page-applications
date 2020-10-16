@@ -22,7 +22,7 @@ export default function Form (props) {
             <h2>Build Your Own Pizza</h2>
             <img src='https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
             alt='pizza bread' />
-            <form  onSubmit={onSubmit} >
+            <form  className='pizza-form' onSubmit={onSubmit} >
                 <label>Name
                     <input 
                         type='text'
