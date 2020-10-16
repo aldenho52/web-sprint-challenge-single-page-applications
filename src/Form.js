@@ -1,6 +1,7 @@
 import React from 'react'
-import Order from './Order'
 import FormSection from './Form_Components/form_section'
+import Confirmation from './Confirmation'
+import { Route, Switch } from 'react-router-dom'
 
 export default function Form (props) {
     const {values, change, submit, disabled, errors, orders} = props
@@ -17,14 +18,8 @@ export default function Form (props) {
             disabled={disabled}
             errors={errors}
             />
-            <div className='orders-section'>
-        <h2>ORDERS</h2>
-        {
-          orders.map(order => {
-            return <Order key={order.id} details={order} />
-          })
-        }
-      </div>
+            <Confirmation orders={orders} />
         </div>
+
     )
 }

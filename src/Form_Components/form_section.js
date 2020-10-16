@@ -14,7 +14,8 @@ export default function FormSection (props) {
 
       const onSubmit = (evt) => {
         evt.preventDefault();
-        submit();
+        submit()
+
       };
 
     return (
@@ -84,10 +85,7 @@ export default function FormSection (props) {
                 <label>Special Instructions
                     <input type='text' value={values.instructions} name='instructions' onChange={onChange} placeholder="Enter any additional instructions or comments here" />
                 </label>
-                <Link to='/confirmation'>
-
-                </Link>
-                <button disabled={disabled}>Submit</button>
+                    <button disabled={disabled}>Submit</button>           
                 <div className="errors">
                     <div>{errors.name}</div>
                     <div>{errors.size}</div>

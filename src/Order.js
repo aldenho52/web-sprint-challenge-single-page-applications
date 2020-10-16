@@ -7,6 +7,7 @@ function Order({ details }) {
 
   return (
     <div className='order-container'>
+    <h2>Order Details</h2>
       <h3>{details.name}</h3>
       <p>Size: {details.size}</p>
       <p>Gluten Free Crust: {details.gluten ? 'Yes' : 'No'}</p>

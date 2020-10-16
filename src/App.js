@@ -4,10 +4,8 @@ import axios from 'axios'
 import * as yup from 'yup'
 import schema from './formSchema'
 
-
 import Home from './Home'
 import Form from './Form'
-import Confirmation from './Confirmation'
 
 const initialFormValues = {
     name: '',
@@ -36,12 +34,25 @@ const App = () => {
   const postNewOrder = (newOrder) => {
     axios
       .post('https://reqres.in/api/users', newOrder)
-      .then(res => {
-        console.log(res)
-        console.log('Order submitted!')
-        setOrders([res.data, ...orders])
-        setFormValues(initialFormValues)
-      })
+      // ********************************
+      // SYNTAX FOR DELAYED POST IN CONSOLE
+
+      .then(value => new Promise(resolve => {
+        setTimeout(() => {
+          // resolve(value)
+          console.log(value)
+          console.log('Order submitted!')
+          setOrders([value.data, ...orders])
+          setFormValues(initialFormValues)
+        }, 1000)
+      }))
+      // ********************************
+      // .then(res => {
+      //   console.log(res)
+      //   console.log('Order submitted!')
+      //   setOrders([res.data, ...orders])
+      //   setFormValues(initialFormValues)
+      // })
       .catch(err => {
         console.log(err)
         console.log('Order failed to submit.')
@@ -115,9 +126,6 @@ useEffect(() => {
             errors={formErrors}
             orders={orders}
           />
-        </Route>
-        <Route path='/confirmation' >
-          <Confirmation />
         </Route>
       </Switch>
   
